@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Mapa latarni w Estonii</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin=""></script>
+    
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        } 
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* STYL DLA TYTUŁU NA GÓRZE MAPY */
+        #map-title {
+            position: absolute;
+            top: 15px;                  /* Odległość od górnej krawędzi */
+            left: 50%;                  /* Wyśrodkowanie w poziomie... */
+            transform: translateX(-50%);/* ...dokładne wycentrowanie */
+            z-index: 1000;              /* KLUCZOWE: wymusza wyświetlanie warstwy TEKSTU nad warstwą MAPY */
+            
+            background: rgba(255, 255, 255, 0.92); /* Białe, lekko przezroczyste tło */
+            color: #2c3e50;             /* Ciemno-szary, elegancki kolor czcionki */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 25px;            /* Rozmiar napisu */
+            font-weight: bold;          /* Pogrubienie */
+            
+            padding: 10px 25px;         /* Margines wewnętrzny (odstęp tekstu od ramki) */
+            border-radius: 8px;         /* Ładne, zaokrąglone rogi plakietki */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Miękki, nowoczesny cień */
+            border: 1px solid #e0e0e0;  /* Delikatna ramka */
+            text-align: center;
+            pointer-events: none;       /* Sprawia, że kliknięcie w tytuł "przelatuje" pod spód na mapę */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map-title">Mapa latarni morskich w Estonii</div>
+
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map', {
+            attributionControl: false
+        }).setView([58.6156, 24.9652], 7);
+
+        L.control.attribution({
+            prefix: false
+        }).addTo(map);
+
+        var tilesource_layer = L.tileLayer('./tiles/{z}/{x}/{y}.png', {
+            minZoom: 7, 
+            maxZoom: 13, 
+            tms: false, 
+            attribution: 'Dane mapowe: &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors (via Geofabrik) | Ikony & wizualizacja: Szczoopak'
+        }).addTo(map);
+    </script>
+
+</body>
+</html>
