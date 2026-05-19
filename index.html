@@ -19,26 +19,25 @@
             height: 100%;
         }
 
-        /* STYL DLA TYTUŁU NA GÓRZE MAPY */
         #map-title {
             position: absolute;
-            top: 15px;                  /* Odległość od górnej krawędzi */
-            left: 50%;                  /* Wyśrodkowanie w poziomie... */
-            transform: translateX(-50%);/* ...dokładne wycentrowanie */
-            z-index: 1000;              /* KLUCZOWE: wymusza wyświetlanie warstwy TEKSTU nad warstwą MAPY */
+            top: 15px;                  
+            left: 50%;                  
+            transform: translateX(-50%);
+            z-index: 1000;              
             
-            background: rgba(255, 255, 255, 0.92); /* Białe, lekko przezroczyste tło */
-            color: #2c3e50;             /* Ciemno-szary, elegancki kolor czcionki */
+            background: rgba(255, 255, 255, 0.92); 
+            color: #2c3e50;             
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 25px;            /* Rozmiar napisu */
-            font-weight: bold;          /* Pogrubienie */
+            font-size: 25px;            
+            font-weight: bold;          
             
-            padding: 10px 25px;         /* Margines wewnętrzny (odstęp tekstu od ramki) */
-            border-radius: 8px;         /* Ładne, zaokrąglone rogi plakietki */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Miękki, nowoczesny cień */
-            border: 1px solid #e0e0e0;  /* Delikatna ramka */
+            padding: 10px 25px;         
+            border-radius: 8px;         
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+            border: 1px solid #e0e0e0;  
             text-align: center;
-            pointer-events: none;       /* Sprawia, że kliknięcie w tytuł "przelatuje" pod spód na mapę */
+            pointer-events: none;
         }
     </style>
 </head>
