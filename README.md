@@ -1,5 +1,7 @@
 # ⚓ Interaktywny Geoportal Latarni Morskich w Estonii
 
+> 🌐 **Zobacz mapę na żywo:** [https://szczoopak.github.io/geoportal-estonia/](https://szczoopak.github.io/geoportal-estonia/)
+
 Interaktywna mapa prezentująca lokalizację latarni morskich w Estonii na tle szczegółowego podkładu topograficzno-komunikacyjnego. 
 
 ## 🗺️ O projekcie
